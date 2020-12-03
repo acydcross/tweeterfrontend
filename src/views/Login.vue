@@ -41,10 +41,11 @@ export default {
         })
         .then(response => {
           // Check if login token sent
-          console.log(response);
-          this.loginStatus = "Success";
-          cookies.set("session", response.data.loginToken);
-          this.$router.push("/user");
+          console.log(response)
+          this.loginStatus = "Success"
+          cookies.set("session", response.data.loginToken)
+          cookies.set("userId", response.data.userId)
+          this.$router.push("/user")
         })
         .catch(error => {
           console.log(error);

@@ -51,6 +51,7 @@ export default {
           // WRITE LOGIC TO ENSURE TOKEN WAS SENT
           console.log(response)
           cookies.set("session", response.data.loginToken)
+          cookies.set("userId", response.data.userId)
           this.$router.push("/user")
         }) // SEND TO HOME PAGE
         .catch(error => {
